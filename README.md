@@ -16,6 +16,8 @@ nmap -sS -sV -A <target-ip>
 ```
 ![image](https://github.com/user-attachments/assets/f20a38a4-dda1-4163-b2b6-6e1d96e0f6ca)
 
+---
+
 ## Web Enumeration
 
 Upon accessing the target via the HTTP port in a browser, we are greeted by a basic website.
@@ -39,6 +41,8 @@ Success. This grants access to the contents of the `/etc/passwd` file. We extrac
 
 At this point, our enumeration on this port is complete.
 
+---
+
 ## Exploring Port 10000 (MiniServ)
 
 Further `nmap` scanning reveals **port 10000**, commonly used by **Webmin** (MiniServ v0.01 in this case).
@@ -56,6 +60,7 @@ Here is the found password for one of our found usernames.
 
 ![image](https://github.com/user-attachments/assets/d7c3c17d-4470-47da-aa27-9d4c4a47ec41)
 
+---
 
 ## Gaining Shell Access
 
@@ -80,6 +85,8 @@ python3 -m http.server 8000
 Then, on the target machine, we use `wget` or `curl` to download and execute the exploit.
 
 ![image](https://github.com/user-attachments/assets/ff1311d6-e643-467b-a082-36eda3fe6d90)
+
+---
 
 ## Summary
 
