@@ -92,11 +92,11 @@ Then, on the target machine, we use `wget` or `curl` to download and execute the
 
 In this CTF challenge, we demonstrated the following skills:
 
-- Network discovery using `netdiscover`
-- Service enumeration with `nmap`
-- Exploiting **Path Traversal** to read sensitive system files
-- Extracting and attempting to crack hashed passwords
-- Identifying and using public exploits for known vulnerable services (MiniServ/Webmin)
-- Uploading and executing exploits using `python -m http.server`
+- ✅ Network discovery using `netdiscover`
+- ✅ Service enumeration with `nmap`
+- ✅ Exploiting **Path Traversal** to read sensitive system files
+- ✅ Extracting and attempting to crack hashed passwords
+- ✅ Identifying and using public exploits for known vulnerable services (MiniServ/Webmin)
+- ✅ Uploading and executing exploits using `python -m http.server`
 
 This box emphasized the importance of manual enumeration and understanding common web vulnerabilities. It also highlights how outdated services can still be found in real-world systems, making patch management critical for system administrators.
