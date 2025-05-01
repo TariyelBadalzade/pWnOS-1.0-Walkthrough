@@ -44,22 +44,31 @@ At this point, our enumeration on this port is complete.
 Further `nmap` scanning reveals **port 10000**, commonly used by **Webmin** (MiniServ v0.01 in this case).
 
 After some online research, we find a working [**exploit**](https://github.com/CyberKnight00/Exploit/blob/master/Webmin%20%3C%201.290%20Usermin%20%3C%201.220%20-%20Arbitrary%20File%20Disclosure/webmin.py) targeting this outdated MiniServ version. The exploit allows us to retrieve the `/etc/shadow` file.
+
 ![image](https://github.com/user-attachments/assets/8290e050-7a37-40f7-a515-c2d6aad75f94)
 ![image](https://github.com/user-attachments/assets/e8c7f759-a97a-41b4-9a6d-47bad163ee3d)
+
 A reference website is found that explains how to **decrypt the shadow hashes** with using [**John the Ripper**](https://erev0s.com/blog/cracking-etcshadow-john/).
+
 ![image](https://github.com/user-attachments/assets/26f601da-e1dc-450d-96b4-20f56ec07fb4)
+
 Here is the found password for one of our found usernames.
+
 ![image](https://github.com/user-attachments/assets/d7c3c17d-4470-47da-aa27-9d4c4a47ec41)
 
 
 ## Gaining Shell Access
 
 We check the Linux distribution running on the target. It turns out to be an outdated version, which opens the door for **privilege escalation** exploits.
+
 ![image](https://github.com/user-attachments/assets/9a6fd9d7-abaf-480b-a96e-9db69480e2b7)
+
 ![image](https://github.com/user-attachments/assets/9c1b184a-adda-4962-810e-78ef9d5fe4cd)
+
 ![image](https://github.com/user-attachments/assets/c4624d7f-29ff-4ba6-93db-b0cc54f8c128)
 
 After more research, we locate a suitable exploit at [**Exploit-DB**](https://www.exploit-db.com/exploits/5092).
+
 ![image](https://github.com/user-attachments/assets/22799c16-ef72-46b5-9c50-5eb9b3907183)
 
 We set up a local server using Python's built-in HTTP module to upload the exploit to the target machine:
@@ -69,6 +78,7 @@ python3 -m http.server 8000
 ```
 
 Then, on the target machine, we use `wget` or `curl` to download and execute the exploit.
+
 ![image](https://github.com/user-attachments/assets/ff1311d6-e643-467b-a082-36eda3fe6d90)
 
 ## Summary
