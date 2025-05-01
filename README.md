@@ -22,6 +22,7 @@ Upon accessing the target via the HTTP port in a browser, we are greeted by a ba
 ![image](https://github.com/user-attachments/assets/9444efd6-8612-4469-94d4-6e4945007ba7)
 
 Trying to manipulate the URL leads to errors. This hints at the possibility of a **Path Traversal** vulnerability. We test this by appending common file paths:
+
 ![image](https://github.com/user-attachments/assets/47b22c10-0fc2-4e65-8f0c-016ee0bac707)
 
 ```bash
