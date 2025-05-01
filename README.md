@@ -1,4 +1,4 @@
-# pWnOS-1.0-Walkthrough
+# pWnOS 1.0 Writeup
 
 This writeup covers the exploitation of the pWnOS CTF machine, highlighting key steps like network scanning, path traversal, and privilege escalation using public exploits.
 
